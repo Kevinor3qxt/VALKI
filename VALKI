@@ -48,6 +48,42 @@ task.wait(0.5)
 newroot.Parent = hrp
 hrp.CFrame = old
 end)
+local Button = FE.NewButton("AUDIO DESTROYER last only for 100 secs re execute",function()
+local duration = 10 -- integer only, no decimals
+
+
+
+if game:GetService("SoundService").RespectFilteringEnabled then return end
+
+local sounds = {}
+
+for i,v in pairs(workspace:GetDescendants()) do
+    if v:IsA("Sound") and v.Parent.Name ~= "HumanoidRootPart" then
+        table.insert(sounds,v)
+    end
+end
+
+
+local con = workspace.DescendantAdded:Connect(function(v)
+    if v:IsA("Sound") and v.Parent.Name ~= "HumanoidRootPart" then
+        table.insert(sounds,v)
+    end
+end)
+wait(.1)
+local start = math.floor(tick())
+repeat
+    for i,v in pairs(sounds) do
+        v:Play()
+        v.TimePosition = math.random(0,v.TimeLength * 1000)/1000
+        task.wait()
+    end
+until math.floor(tick()) == start + duration
+con:Disconnect()
+
+for i,v in pairs(sounds) do
+    v:Stop()
+end
+end)
 local CREDITS = Window.NewTab("CREDS/UPDATES")
 local ME = CREDITS.NewSection("MADE BY 3qxt#9919 btw ive ONLY made DREVIN HUB all other")
 local YES = CREDITS.NewSection("scripts arent mine")
