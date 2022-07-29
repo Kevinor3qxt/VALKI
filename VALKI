@@ -12,8 +12,6 @@ local Button = MAIN.NewButton("inf yield",function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 local Button = MAIN.NewButton("MEEP CITY FUN ASF FE GUI"),function()
--- MeepCracked
--- made by evo
 loadstring(game:HttpGet('https://raw.githubusercontent.com/synolope/meepcracked/main/loader.lua'))()
 end)
 local FE = Main.NewSection("FE SCRIPT HUBS/SCRIPTS")
