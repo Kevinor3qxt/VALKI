@@ -48,7 +48,7 @@ task.wait(0.5)
 newroot.Parent = hrp
 hrp.CFrame = old
 end)
-local Button = FE.NewButton("AUDIO DESTROYER last only for 100 secs re execute",function()
+local Button = FE.NewButton("AUDIO DESTROYER last only for 100 secs re execute (not working)",function()
 local duration = 10 -- integer only, no decimals
 
 
@@ -82,6 +82,16 @@ con:Disconnect()
 
 for i,v in pairs(sounds) do
     v:Stop()
+end
+end)
+local Button = FE.NewButton("fe chat remover move chat off screen works only with default chat",function()
+while true do
+    wait(1.7)
+local args = {
+    [1] = " ",
+    [2] = "All"
+}
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
 end
 end)
 local CREDITS = Window.NewTab("CREDS/UPDATES")
